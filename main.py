@@ -931,7 +931,7 @@ async def txt_handler(bot: Client, m: Message):
                         count += 1
                         continue
 
-                elif "classplus.com/drm" in url:
+                elif "classplusapp.com/drm" in url:
                     try:
                         await bot.send_photo(chat_id=m.chat.id, photo=photologo, caption=cccp
                                             )
