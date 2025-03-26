@@ -444,7 +444,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         thumb = raw_text6
 
-    target_message = f"🎯Target Batch : {b_name}"
+    target_message = f"<pre><code>🎯Target Batch : {b_name}</code></pre>"
     await m.reply_text(target_message, quote=True)
     
     count =int(raw_text)    
@@ -479,6 +479,15 @@ async def txt_handler(bot: Client, m: Message):
          #               else:
          #                   print(f"Failed to get key, status code: {resp.status}")
          #                   await m.reply_text(f"Failed to get key from API, status code: {resp.status}")
+            
+            elif "classplusapp.com/drm" in url:
+                    try:
+                        await bot.send_photo(chat_id=m.chat.id, photo=photologo, caption=f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n🎞️𝐓𝐢𝐭𝐥𝐞 » `{name1}` .mp4\n\n<a href="{urlver}">__**Click Here to Watch Stream**__</a>\n🔗𝐋𝐢𝐧𝐤 » {link0}\n\n<pre><code>📚 Course : {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n')
+                        count +=1
+                    except Exception as e:
+                        await m.reply_text(str(e))    
+                        time.sleep(1)    
+                        continue          
 
             if "acecwply" in url:
                 cmd = f'yt-dlp -o "{name}.%(ext)s" -f "bestvideo[height<={raw_text2}]+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv --no-warning "{url}"'
@@ -642,7 +651,7 @@ async def txt_handler(bot: Client, m: Message):
                         count += 1
                         continue
 
-                elif "cpvod.testbook.com" in url or "classplusapp.com/drm" in url:
+                elif "cpvod.testbook.com" in url:
                     try:
                         await bot.send_photo(chat_id=m.chat.id, photo=photologo, caption=ccver)
                         count +=1
