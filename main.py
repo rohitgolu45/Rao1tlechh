@@ -31,7 +31,7 @@ photologo = 'https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236
 photoyt = 'https://tinypic.host/images/2025/03/18/YouTube-Logo.wine.png'
 
 async def show_random_emojis(message):
-    emojis = ['🐼', '🐶', '🐅', '⚡️', '🚀', '✨', '💥', '☠️', '🥂', '🍾']
+    emojis = ['🐼', '🐶', '🐅', '⚡️', '🚀', '✨', '💥', '☠️', '🥂', '🍾', '🐔', '✈️', '🦁', '🕊️', '💃', '🦋']
     emoji_message = await message.reply_text(' '.join(random.choices(emojis, k=1)))
     return emoji_message
     
@@ -455,8 +455,8 @@ async def txt_handler(bot: Client, m: Message):
     else:
         thumb = raw_text6
 
-    target_message = f"<pre><code>🎯Target Batch : {b_name}</code></pre>"
-    await m.reply_text(target_message, quote=True)
+    target_message = f"❝🎯Target Batch : {b_name}❞"
+    await m.reply_text(f"<blockquote>{target_message}</blockquote>", parse_mode="HTML")
 
     failed_count =1 
     count =int(raw_text)    
