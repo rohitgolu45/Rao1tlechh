@@ -222,7 +222,7 @@ async def start_command(bot: Client, message: Message):
     random_image_url = random.choice(image_urls)
     caption = (
         "🌟 Welcome Boss😸! 🌟\n\n"
-        "➽ I am Powerful DRM Uploader Bot 📥\n\n➽ 𝐔𝐬𝐞 /drm for use this Bot.\n\n<pre><code> 𝐌𝐚𝐝𝐞 𝐁𝐲 : 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🦁</code></pre>"
+        "➽ I am Powerful DRM Uploader Bot 📥\n\n➽ 𝐔𝐬𝐞 /drm for use this Bot.\n\n➽ 𝐌𝐚𝐝𝐞 𝐁𝐲 : 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🦁"
     )
     
     await bot.send_photo(
@@ -456,7 +456,7 @@ async def txt_handler(bot: Client, m: Message):
         thumb = raw_text6
 
     target_message = f"❝🎯Target Batch : {b_name}❞"
-    await m.reply_text(f"<blockquote>{target_message}</blockquote>", parse_mode="HTML")
+    await m.reply_text(f"<blockquote>{target_message}</blockquote>")
 
     failed_count =1 
     count =int(raw_text)    
